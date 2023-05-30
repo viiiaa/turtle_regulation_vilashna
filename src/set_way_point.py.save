@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+import rospy
+from turtlesim.msg import pose
+import math
+import time
+
+#global variable to store to store turtle pose
+turtle_pose=Pose()
+
+#callback function for pose topic
+def pose_callback(message):
+	global turtle_pose
+	turtle_pose = msg
+
+    pub = rospy.Publisher('pose', turtlesim/pose)
+    rospy.init_node('set_way_point_node', anonymous=True)
+	rospy.Suscriber('pose',Pose,pose_callback)
+
+	waypoint = (7,7)
+	xA = turtle_pose.x
+	yA = turtle_pose.y
+	xB, yB = waypoint
+	theta_desired = math.atan2(yB-yA, xB-xA)
+
+	𝑒 = arctan (tan (𝜃𝑑𝑒𝑠𝑖𝑟𝑒𝑑 −𝜃 2 ))
+	#𝑒 = angle of robot	𝑢 = 𝐾𝑝 ∗ 𝑒 #La commande u sera proportionnelle à l’erreur
+    while not rospy.is_shutdown():
+        turtle_str = "hello world %s" % rospy.get_time()
+        rospy.loginfo(hello_str)
+        pub.publish(hello_str)
+        rate.sleep(1)
+
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass
