@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   turtlesim
+ message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -51,8 +52,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 # add_message_files(
 #   FILES
-#   Message1.msg
-#   Message2.msg
+    Message1.msg
+    Message2.msg
 # )
 
 ## Generate services in the 'srv' folder
@@ -109,7 +110,9 @@ catkin_package(
 #  LIBRARIES turtle_regulation_vilashna
 #  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs turtlesim
 #  DEPENDS system_lib
+message_runtime
 )
+
 
 ###########
 ## Build ##
